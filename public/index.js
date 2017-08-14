@@ -7,7 +7,10 @@ warnButton.addEventListener('click', () => {
   .then(res => res.json())
   .then(data => {
     const newDiv = document.createElement('div');
-    const newContent = document.createTextNode('That was a bad idea ' + data.name)
+    const newContent = document.createTextNode('That was a bad idea ' + data.name); const waggingFinger = document.createElement('img');
+
+    waggingFinger.setAttribute("src", data.finger)
+    waggingFinger.className = 'nonono';
 
     newDiv.className = 'bad-idea'
     newDiv.appendChild(newContent)
@@ -25,7 +28,8 @@ sunsetButton.addEventListener('click', () => {
     sunsetArray.map((imgSrc) => {
       let sunset = document.createElement('img');
       sunset.setAttribute("src", imgSrc)
-      sunset.className = 'sunset-img'
+      sunset.className = 'sunset-img';
+      buttonContainer.insertBefore
       buttonContainer.insertBefore(sunset, sunsetButton.nextSibling)
     });
     buttonContainer.removeChild(warnButton)
